@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Switch</title>
+
+    <style>
+
+        button {
+            padding: 10px 20px;
+            background-color: orange;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: darkorange;
+        }
+
+        #outputBox {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #222;
+            color: white;
+            text-align: left;
+            border-radius: 8px;
+            line-height: 1.8;
+        }
+    </style>
+
+</head>
+
+<body>
+
+        <h2>การตรวจสอบเกรด</h2>
+        <button onclick="checkGrade()">Run Code</button>
+        <div id="outputBox"></div>
+
+    <script>
+
+        function checkGrade() {
+
+            let score = Math.floor(Math.random() * 101);
+            let grade;
+
+            if (score >= 80) {
+                grade = "A";
+            } else if (score >= 70) {
+                grade = "B";
+            } else if (score >= 60) {
+                grade = "C";
+            } else if (score >= 50) {
+                grade = "D";
+            } else {
+                grade = "F";
+            }
+
+            let result;
+            if (score >= 50) {
+                result = "ผ่าน";
+            } else {
+                result = "ไม่ผ่าน";
+            }
+
+            let description;
+            switch (grade) {
+                case "A":
+                    description = "ยอดเยี่ยมมาก!";
+                    break;
+
+                case "B":
+                    description = "ดีมาก รักษามาตรฐานไว้";
+                    break;
+
+                case "C":
+                    description = "ผ่านเกณฑ์ระดับดี";
+                    break;
+
+                case "D":
+                    description = "พอใช้ แต่ควรพัฒนาเพิ่ม";
+                    break;
+
+                case "F":
+                    description = "ต้องลงทะเบียนเรียนใหม่";
+                    break;
+            }
+
+            document.getElementById("outputBox").innerHTML =
+                "คะแนนที่สุ่มได้: " + score + "<br>" +
+                "เกรด: " + grade + "<br>" +
+                "ผลสอบ: " + result + "<br>" +
+                "คำอธิบาย: " + description;
+
+            console.log("คะแนนที่สุ่มได้: " + score);
+            console.log("เกรด: " + grade);
+            console.log("ผลสอบ: " + result);
+            console.log("คำอธิบาย: " + description);
+        }
+
+    </script>
+
+</body>
+</html>
