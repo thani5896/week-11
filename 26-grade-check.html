@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Check</title>
+
+<style>
+   
+    button {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    #output {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #f9f9f9;
+        border-radius: 5px;
+        line-height: 1.8;
+    }
+</style>
+
+</head>
+
+<body>
+  
+    <h2>Grade Check</h2>
+    <button onclick="checkGrade()">Run Code</button>
+    <div id="output"></div>
+
+<script>
+
+    function checkGrade() {
+        let score = 98;
+
+        let grade;
+        if (score >= 80) {
+            grade = "A";
+        } else if (score >= 70) {
+            grade = "B";
+        } else if (score >= 60) {
+            grade = "C";
+        } else if (score >= 50) {
+            grade = "D";
+        } else {
+            grade = "F";
+        }
+
+        let result;
+
+        if (score >= 50) {
+            result = "ผ่าน";
+        } else {
+            result = "ไม่ผ่าน";
+        }
+
+        document.getElementById("output").innerHTML =
+            "คะแนนที่สุ่มได้: " + score + "<br>" +
+            "เกรด: " + grade + "<br>" +
+            "ผลสอบ: " + result;
+
+        console.log("คะแนนที่สุ่มได้: " + score);
+        console.log("เกรด: " + grade);
+        console.log("ผลสอบ: " + result);
+    }
+
+</script>
+
+
+</body>
+</html>
