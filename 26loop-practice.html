@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop Practice</title>
+
+    <style>
+        
+        button {
+            padding: 10px 20px;
+            background-color: #00aaff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #222;
+            color: white;
+            text-align: left;
+        }
+    </style>
+
+</head>
+
+<body>
+
+        <h2>Loop Practice</h2>
+        <button onclick="runCode()">Run Code</button>
+        <div id="output"></div>
+  
+    <script>
+
+        function runCode() {
+            // กำหนดจำนวนสูงสุด
+            let maxNumber = 20;
+
+            let text = "";
+
+            // แสดงเลข 0 ถึง maxNumber
+            for (let i = 0; i <= maxNumber; i++) {
+
+                if (i % 2 == 0) {
+                    text += i + " (คู่)<br>";
+                } else {
+                    text += i + " (คี่)<br>";
+                }
+
+                console.log(i);
+            }
+
+            // นับทีละ 2
+            text += "<br>นับทีละ 2:<br>";
+
+            for (let i = 0; i <= maxNumber; i += 2) {
+                text += "นับทีละ 2: " + i + "<br>";
+                console.log("นับทีละ 2: " + i);
+            }
+
+            // นับถอยหลัง
+            text += "<br>นับถอยหลัง:<br>";
+
+            for (let i = 10; i >= 0; i--) {
+                text += "ถอยหลัง: " + i + "<br>";
+                console.log("ถอยหลัง: " + i);
+            }
+            document.getElementById("output").innerHTML = text;
+        }
+
+    </script>
+
+</body>
+</html>
